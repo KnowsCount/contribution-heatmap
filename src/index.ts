@@ -1,1 +1,1 @@
-export { default } from './heatmap/Heatmap'
+export { default as Heatmap } from './heatmap/Heatmap'

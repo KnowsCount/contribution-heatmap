@@ -98,13 +98,21 @@
 		// "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
 		"skipLibCheck": true /* Skip type checking all .d.ts files. */,
 
-		"jsx": "react",
+		"jsx": "react", 
 		"declaration": true,
 		"declarationDir": "types",
 		"sourceMap": true,
 		"outDir": "dist",
 		"moduleResolution": "node",
 		"allowSyntheticDefaultImports": true,
-		"emitDeclarationOnly": true
-	}
+		"emitDeclarationOnly": true,
+	},
+	"include": ["src/**/*"],
+	"exclude": [
+		"node_modules",
+		"build",
+		"storybook-static",
+		"src/**/*.stories.tsx",
+		"src/**/*.test.tsx"
+  	]
 }
