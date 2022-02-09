@@ -75,7 +75,7 @@
 
 		/* Type Checking */
 		"strict": true /* Enable all strict type-checking options. */,
-		"noImplicitAny": true,                            /* Enable error reporting for expressions and declarations with an implied `any` type.. */
+		"noImplicitAny": true /* Enable error reporting for expressions and declarations with an implied `any` type.. */,
 		"strictNullChecks": false /* When type checking, take into account `null` and `undefined`. */,
 		// "strictFunctionTypes": true,                      /* When assigning functions, check to ensure parameters and the return values are subtype-compatible. */
 		// "strictBindCallApply": true,                      /* Check that the arguments for `bind`, `call`, and `apply` methods match the original function. */
@@ -98,14 +98,14 @@
 		// "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
 		"skipLibCheck": true /* Skip type checking all .d.ts files. */,
 
-		"jsx": "react", 
+		"jsx": "react",
 		"declaration": true,
 		"declarationDir": "types",
 		"sourceMap": true,
 		"outDir": "dist",
 		"moduleResolution": "node",
 		"allowSyntheticDefaultImports": true,
-		"emitDeclarationOnly": true,
+		"emitDeclarationOnly": true
 	},
 	"include": ["src/**/*"],
 	"exclude": [
@@ -114,5 +114,5 @@
 		"storybook-static",
 		"src/**/*.stories.tsx",
 		"src/**/*.test.tsx"
-  	]
+	]
 }
