@@ -1,9 +1,9 @@
 import React from 'react'
-import { months, days } from './constants'
+import { months, days } from '../constants'
 import './Heatmap.css'
 
 const Heatmap = () => {
-	const daysInYear = 365
+	const daysInYear: number = 365
 	return (
 		<>
 			<div className="graph">

@@ -1,1 +1,1 @@
-export { default as ContributionHeatmap } from './Heatmap'
+export * from './heatmap'
