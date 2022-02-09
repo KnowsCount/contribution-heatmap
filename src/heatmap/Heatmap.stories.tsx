@@ -1,5 +1,5 @@
 import React from 'react'
-import Heatmap from '../index'
+import { Heatmap } from '../index'
 
 export default {
 	title: 'Example/Heatmap',
