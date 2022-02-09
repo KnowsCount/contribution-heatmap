@@ -6,7 +6,7 @@
 
 :root {
 	--square-size: 15px;
-	--square-gap: 5px;
+	--square-gap: 4px;
 	--week-width: calc(var(--square-size) + var(--square-gap));
 	--lightest: #ebedf0;
 	--light: #c6e48b;
