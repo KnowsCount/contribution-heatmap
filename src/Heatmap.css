@@ -15,13 +15,21 @@
 	--darkest: #216e39;
 }
 
+ul {
+	padding-inline-start: 0;
+}
+
 .months {
 	grid-area: months;
+	margin-bottom: 0;
 }
 .days {
+	margin-block-end: 0;
 	grid-area: days;
 }
 .squares {
+	margin-top: 0;
+	margin-block-start: 0;
 	grid-area: squares;
 }
 
