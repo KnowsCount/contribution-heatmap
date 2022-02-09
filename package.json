@@ -13,11 +13,12 @@
 		"url": "git+https://github.com/KnowsCount/contribution-heatmap.git"
 	},
 	"files": [
-		"dist"
+		"dist",
+		"src"
 	],
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.js",
-	"types": "dist/types/index.d.ts",
+	"types": "dist/index.d.ts",
 	"keywords": [
 		"react",
 		"heatmap",
