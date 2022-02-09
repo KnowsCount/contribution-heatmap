@@ -1,5 +1,21 @@
 node_modules/
-*.tgz
+.DS_*
+
+# build
 dist
-.DS_Store
+*.tgz
+
+# storybook
 storybook-static
+
+# logs & backups
+*.log
+**/*.backup.*
+**/*.back.*
+
+# yarn v2
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*

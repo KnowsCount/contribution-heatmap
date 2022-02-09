@@ -49,6 +49,10 @@
 	grid-auto-columns: var(--square-size);
 }
 
+.squares li {
+	border-radius: 3px;
+}
+
 
 /* Other styling */
 

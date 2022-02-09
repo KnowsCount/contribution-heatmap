@@ -1,10 +1,10 @@
 import React from 'react'
-import Heatmap from './Heatmap'
-// import { ContributionHeatmap } from './index'
+// import Heatmap from './Heatmap'
+import { ContributionHeatmap } from './index'
 
 export default {
 	title: 'Example/Heatmap',
-	component: Heatmap,
+	component: ContributionHeatmap,
 }
 
-export const Basic = () => <Heatmap />
+export const LightMode = () => <ContributionHeatmap />
