@@ -1,0 +1,19 @@
+name: lint
+
+on:
+    push:
+
+jobs:
+    prettier:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout
+              uses: actions/checkout@v2
+
+            - name: prettify code
+              uses: creyD/prettier_action@v3.3
+              with:
+                  prettier_options: --write **/*.{html,ts,vue,css}
+                  commit_message: "style: automated code prettify"
+              env:
+                  GITHUB_TOKEN: ${{ secrets.ACCESS }}
