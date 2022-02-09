@@ -14,7 +14,7 @@ const Heatmap = () => {
 					{days.map((days, i) => <li key={i}>{days}</li> )}
 				</ul>
 				<ul className="squares">
-					{[...Array(daysInYear)].map((_, i) => <li data-level={Math.floor(Math.random() * 3)} key={i}></li> )}
+					{[...Array(daysInYear)].map((_, i) => <li data-level={Math.floor(Math.random() * 4)} key={i}></li> )}
 				</ul>
 			</div>
 		</>

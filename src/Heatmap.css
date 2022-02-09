@@ -1,4 +1,4 @@
-/* Article - https://bitsofco.de/github-contribution-graph-css-grid/ */
+/* The code below is inspired by https://bitsofco.de/github-contribution-graph-css-grid/ */
 
 * {
 	list-style: none;
@@ -8,6 +8,11 @@
 	--square-size: 15px;
 	--square-gap: 5px;
 	--week-width: calc(var(--square-size) + var(--square-gap));
+	--lightest: #ebedf0;
+	--light: #c6e48b;
+	--medium: #40c463;
+	--dark: #30a14e;
+	--darkest: #216e39;
 }
 
 .months { grid-area: months; }
@@ -49,10 +54,6 @@
 	grid-auto-columns: var(--square-size);
 }
 
-.squares li {
-	border-radius: 3px;
-}
-
 
 /* Other styling */
 
@@ -72,17 +73,23 @@ body {
 }
 
 .squares li {
-	background-color: #ebedf0;
+	border-radius: 3px;
+	border: 1px rgba(27, 31, 35, 0.06) solid;
+	background-color: var(--lightest);
 }
 
 .squares li[data-level="1"] {
-	background-color: #c6e48b;
+	background-color: var(--light);
 }
 
 .squares li[data-level="2"] {
-	background-color: #7bc96f;
+	background-color: var(--medium);
 }
 
 .squares li[data-level="3"] {
-	background-color: #196127;
+	background-color: var(--dark);
+}
+
+.squares li[data-level="4"] {
+	background-color: var(--darkest);
 }
