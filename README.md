@@ -4,6 +4,7 @@
 
 > a react contribution heatmap component.
 
+-   [npm link](https://www.npmjs.com/package/contribution-heatmap)
 -   [storybook preview](https://contribution-heatmap.vercel.app/)
 
 ## 📌 reporting bugs
