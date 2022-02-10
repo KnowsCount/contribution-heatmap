@@ -37,7 +37,7 @@ import { Heatmap } from "contribution-heatmap"
 
 resolving issues or eliminating bugs in the repository will be highly appreciated 🎉. also, feel free to share your ideas in the [discussions page](https://github.com/KnowsCount/contribution-heatmap/discussions).
 
-for more details please read [CONTRIBUTING.md](./CONTRIBUTING.md) (WIP).
+for more details please read [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ### 🛠 install dependencies
 
