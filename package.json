@@ -1,9 +1,12 @@
 {
 	"name": "contribution-heatmap",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "a github-inspired react contribution heatmap component",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
+		"build:major": "npm --no-git-tag-version version major && rollup -c",
+		"build:minor": "npm --no-git-tag-version version minor && rollup -c",
+		"build:patch": "npm --no-git-tag-version version patch && rollup -c",
 		"build": "rollup -c",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
