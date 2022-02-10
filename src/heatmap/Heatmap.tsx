@@ -22,6 +22,10 @@ const Heatmap = () => {
 						<li
 							data-level={Math.floor(Math.random() * 4)}
 							key={i}
+							data-tooltip={
+								Math.floor(Math.random() * 4) +
+								' contributions on this day'
+							}
 						></li>
 					))}
 				</ul>
