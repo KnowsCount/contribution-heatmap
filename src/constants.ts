@@ -13,6 +13,14 @@ export const months: string[] = [
 	'Dec',
 ]
 
-export const weekDays: string[] = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+export const weekDays: string[] = [
+	'Sun',
+	'Mon',
+	'Tue',
+	'Wed',
+	'Thu',
+	'Fri',
+	'Sat',
+]
 
 export const daysInYear: number = 365
