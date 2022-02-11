@@ -91,34 +91,40 @@ body {
 }
 
 .squares li {
-	/* position: relative; */
 	border-radius: 3px;
 	border: 1px rgba(27, 31, 35, 0.06) solid;
 	background-color: var(--lightest);
-	z-index: 1 !important;
 }
+
+/* .squares li[data-level='0'] {
+	background-color: var(--lightest);
+	z-index: -1;
+} */
 
 .squares li[data-level='1'] {
 	background-color: var(--light);
+	z-index: -1;
 }
 
 .squares li[data-level='2'] {
 	background-color: var(--medium);
+	z-index: -1;
 }
 
 .squares li[data-level='3'] {
 	background-color: var(--dark);
+	z-index: -1;
 }
 
 .squares li[data-level='4'] {
 	background-color: var(--darkest);
+	z-index: -1;
 }
 
 /* Styling Tooltip */
 [data-tooltip] {
 	position: relative;
 	cursor: pointer;
-	z-index: 999 !important;
 }
 
 [data-tooltip]:before,
