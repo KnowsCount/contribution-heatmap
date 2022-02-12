@@ -8,11 +8,22 @@
 	--square-size: 15px;
 	--square-gap: 4px;
 	--week-width: calc(var(--square-size) + var(--square-gap));
-	--lightest: #ebedf0;
-	--light: #c6e48b;
+	--lowest: #ebedf0;
+	--low: #c6e48b;
 	--medium: #40c463;
-	--dark: #30a14e;
-	--darkest: #216e39;
+	--high: #30a14e;
+	--highest: #216e39;
+}
+
+[data-theme='dark'] {
+	--square-size: 15px;
+	--square-gap: 4px;
+	--week-width: calc(var(--square-size) + var(--square-gap));
+	--lowest: #ebedf0;
+	--low: #c6e48b;
+	--medium: #40c463;
+	--high: #30a14e;
+	--highest: #216e39;
 }
 
 ul {
