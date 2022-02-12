@@ -2,12 +2,16 @@
 
 * {
 	list-style: none;
+	color: var(--font-colour);
+	background-color: var(--background-colour);
 }
 
 :root {
 	--square-size: 15px;
 	--square-gap: 4px;
 	--week-width: calc(var(--square-size) + var(--square-gap));
+	--font-colour: #000;
+	--background-colour: #fff;
 	--lowest: #ebedf0;
 	--low: #c6e48b;
 	--medium: #40c463;
@@ -19,11 +23,13 @@
 	--square-size: 15px;
 	--square-gap: 4px;
 	--week-width: calc(var(--square-size) + var(--square-gap));
-	--lowest: #ebedf0;
-	--low: #c6e48b;
-	--medium: #40c463;
-	--high: #30a14e;
-	--highest: #216e39;
+	--font-colour: #eee;
+	--background-colour: #333;
+	--lowest: #161b22;
+	--low: #006d32;
+	--medium: #006d32;
+	--high: #26a642;
+	--highest: #39d353;
 }
 
 ul {
@@ -102,11 +108,11 @@ body {
 .squares li {
 	border-radius: 3px;
 	border: 1px rgba(27, 31, 35, 0.06) solid;
-	background-color: var(--lightest);
+	background-color: var(--lowest);
 }
 
 .squares li[data-level='1'] {
-	background-color: var(--light);
+	background-color: var(--low);
 }
 
 .squares li[data-level='2'] {
@@ -114,9 +120,9 @@ body {
 }
 
 .squares li[data-level='3'] {
-	background-color: var(--dark);
+	background-color: var(--high);
 }
 
 .squares li[data-level='4'] {
-	background-color: var(--darkest);
+	background-color: var(--highest);
 }
