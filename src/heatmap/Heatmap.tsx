@@ -1,5 +1,6 @@
 import React from 'react'
-import { months, days } from '../constants'
+import { months, weekDays, daysInYear } from '../constants'
+import * as utils from '../utils'
 import './Heatmap.css'
 
 const Heatmap = () => {
@@ -13,8 +14,8 @@ const Heatmap = () => {
 					))}
 				</ul>
 				<ul className="days">
-					{days.map((days, i) => (
-						<li key={i}>{days}</li>
+					{weekDays.map((weekDays, i) => (
+						<li key={i}>{weekDays}</li>
 					))}
 				</ul>
 				<ul className="squares">
