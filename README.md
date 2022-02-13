@@ -1,4 +1,4 @@
-<!-- <img src="src/assets/logo.png" align="right" width="128" height="128" /> -->
+<img src="https://knowscount-1304485449.cos.ap-shanghai.myqcloud.com/assets/React%20App%20Screenshot.svg" align="right" width="128" height="128" />
 
 # contribution-heatmap
 

@@ -1,4 +1,4 @@
-export const months = [
+export const months: string[] = [
 	'Jan',
 	'Feb',
 	'Mar',
@@ -13,4 +13,14 @@ export const months = [
 	'Dec',
 ]
 
-export const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+export const weekDays: string[] = [
+	'Sun',
+	'Mon',
+	'Tue',
+	'Wed',
+	'Thu',
+	'Fri',
+	'Sat',
+]
+
+export const daysInYear: number = 365

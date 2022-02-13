@@ -1,9 +1,8 @@
 import React from 'react'
-import { months, days } from '../constants'
+import { months, weekDays, daysInYear } from '../constants'
 import './Heatmap.css'
 
 const Heatmap = () => {
-	const daysInYear: number = 365
 	return (
 		<>
 			<div className="graph">
@@ -13,8 +12,8 @@ const Heatmap = () => {
 					))}
 				</ul>
 				<ul className="days">
-					{days.map((days, i) => (
-						<li key={i}>{days}</li>
+					{weekDays.map((weekDays, i) => (
+						<li key={i}>{weekDays}</li>
 					))}
 				</ul>
 				<ul className="squares">
@@ -22,6 +21,10 @@ const Heatmap = () => {
 						<li
 							data-level={Math.floor(Math.random() * 4)}
 							key={i}
+							data-tooltip={
+								Math.floor(Math.random() * 4) +
+								' contributions on this day'
+							}
 						></li>
 					))}
 				</ul>
