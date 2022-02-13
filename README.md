@@ -1,10 +1,11 @@
-<img src="https://knowscount-1304485449.cos.ap-shanghai.myqcloud.com/assets/React%20App%20Screenshot.svg" align="right" width="128" height="128" />
+<img src="https://knowscount-1304485449.cos.ap-shanghai.myqcloud.com/assets/React%20App%20Screenshot.svg" align="right" width="80" height="80" />
 
 # contribution-heatmap
 
 > a react contribution heatmap component.
 
 -   [storybook preview](https://contribution-heatmap.vercel.app/)
+-   [npm link](https://www.npmjs.com/package/contribution-heatmap)
 
 ## 📌 reporting bugs
 
