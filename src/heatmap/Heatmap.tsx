@@ -3,7 +3,6 @@ import { months, weekDays, daysInYear } from '../constants'
 import './Heatmap.css'
 
 const Heatmap = () => {
-	const daysInYear: number = 365
 	return (
 		<>
 			<div className="graph">
