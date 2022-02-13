@@ -1,6 +1,6 @@
 {
 	"name": "contribution-heatmap",
-	"version": "0.0.8",
+	"version": "0.0.9",
 	"description": "a github-inspired react contribution heatmap component",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
@@ -18,8 +18,7 @@
 		"url": "git+https://github.com/KnowsCount/contribution-heatmap.git"
 	},
 	"files": [
-		"dist",
-		"src"
+		"dist"
 	],
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.js",
