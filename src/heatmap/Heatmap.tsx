@@ -1,6 +1,5 @@
 import React from 'react'
 import { months, weekDays, daysInYear } from '../constants'
-import * as utils from '../utils'
 import './Heatmap.css'
 
 const Heatmap = () => {
