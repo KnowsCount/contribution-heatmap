@@ -98,27 +98,22 @@ body {
 
 /* .squares li[data-level='0'] {
 	background-color: var(--lightest);
-	z-index: -1;
 } */
 
 .squares li[data-level='1'] {
 	background-color: var(--light);
-	z-index: -1;
 }
 
 .squares li[data-level='2'] {
 	background-color: var(--medium);
-	z-index: -1;
 }
 
 .squares li[data-level='3'] {
 	background-color: var(--dark);
-	z-index: -1;
 }
 
 .squares li[data-level='4'] {
 	background-color: var(--darkest);
-	z-index: -1;
 }
 
 /* Styling Tooltip */
@@ -136,6 +131,7 @@ body {
 
 [data-tooltip]:before {
 	position: absolute;
+	z-index: 999;
 	bottom: 150%;
 	left: 100%;
 	margin-bottom: 5px;
