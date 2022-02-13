@@ -96,10 +96,6 @@ body {
 	background-color: var(--lightest);
 }
 
-/* .squares li[data-level='0'] {
-	background-color: var(--lightest);
-} */
-
 .squares li[data-level='1'] {
 	background-color: var(--light);
 }
