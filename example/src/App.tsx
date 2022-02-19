@@ -1,13 +1,12 @@
-import React from "react";
-import { Heatmap } from "contribution-heatmap";
-import "./App.css";
+import React from 'react'
+import { Heatmap } from 'contribution-heatmap'
 
 function App() {
-  return (
-    <div className="App">
-      <Heatmap />
-    </div>
-  );
+	return (
+		<div>
+			<Heatmap />
+		</div>
+	)
 }
 
-export default App;
+export default App
