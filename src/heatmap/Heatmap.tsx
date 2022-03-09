@@ -23,6 +23,17 @@ export interface IProps {
 
 // async function getData(url) {}
 
+const Squares = (props: { count: number }, i: React.Key) => {
+	const { count } = props
+	return (
+		<li
+			data-level={count}
+			key={i}
+			data-tooltip={count + ' contributions on this day'}
+		></li>
+	)
+}
+
 const Heatmap = () => {
 	return (
 		<>
@@ -38,15 +49,8 @@ const Heatmap = () => {
 					))}
 				</ul>
 				<ul className="squares">
-					{[...Array(daysInYear)].map((_, i) => (
-						<li
-							data-level={generateRandomData()}
-							key={i}
-							data-tooltip={
-								generateRandomData() +
-								' contributions on this day'
-							}
-						></li>
+					{[...Array(daysInYear)].map((i, data) => (
+						<Squares key={i} count={generateRandomData()} />
 					))}
 				</ul>
 			</div>
