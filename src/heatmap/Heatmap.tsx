@@ -1,35 +1,39 @@
 import React from 'react'
 import { months, weekDays, daysInYear } from '../constants'
-import { getRandomInt, TransformCount } from '../utils'
+import { Level } from '../types'
+import { getRandomCount, getRandomInt, TransformCount } from '../utils'
 import './Heatmap.css'
-import type { Day } from '../types'
-
-type Data = Array<Day>
 
 export interface IProps {
 	/**
-	 * sample data
-	 * {
-	 *     date: '2020-01-01',
-	 *     count: 2
-	 * }
+	 * @description the colour of the squares from lightest to darkest, for each data-level from 0 to 4. remember the prop name is `colour`, not `color`. (WIP)
+	 * @example ['#ebedf0', '#c6e48b', '#40c463', '#30a14e', '#216e39']
 	 */
-	data: Data
+	colour?: string[]
+	/**
+	 * @description the number of squares to display.
+	 * @default daysInYear (365)
+	 * @example 365
+	 */
+	squaresNumber?: number
+	/**
+	 * @description an array of contribution (commit) count for each square.
+	 * @example [5, 4, 3, 1, 5]
+	 */
+	count: number[]
 }
 
-const Squares = (props: { count: number }, i: React.Key) => {
-	const { count } = props
-	let level = TransformCount(count)
-	return (
-		<li
-			data-level={level}
-			key={i}
-			data-tooltip={count + ' contributions on this day'}
-		></li>
-	)
-}
-
-const Heatmap = () => {
+const Heatmap: React.FC<IProps> = (
+	props: {
+		colour?: string[]
+		squaresNumber?: number
+		count: number[]
+	},
+	i: number
+) => {
+	let squaresNumber = props.squaresNumber || daysInYear
+	let count = getRandomCount(squaresNumber)
+	let level = count.map((x) => TransformCount(x))
 	return (
 		<>
 			<div className="graph">
@@ -44,8 +48,14 @@ const Heatmap = () => {
 					))}
 				</ul>
 				<ul className="squares">
-					{[...Array(daysInYear)].map((i, data) => (
-						<Squares key={i} count={getRandomInt(0, 21)} />
+					{[...Array(squaresNumber)].map((key: React.Key, i) => (
+						<li
+							data-level={level[i]}
+							key={key}
+							data-tooltip={
+								count[i] + ' contributions on this day'
+							}
+						></li>
 					))}
 				</ul>
 			</div>

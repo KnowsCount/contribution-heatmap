@@ -5,6 +5,14 @@ export const getRandomInt = (min: number, max: number): number => {
 	return randomInt
 }
 
+export const getRandomCount = (squares: number) => {
+	let randomCount: number[] = []
+	for (let i = 0; i < squares; i++) {
+		randomCount.push(getRandomInt(0, 21))
+	}
+	return randomCount
+}
+
 export const TransformCount = (count: number) => {
 	if (count == 0) {
 		return 0
