@@ -1,6 +1,6 @@
 import React from 'react'
 import { months, weekDays, daysInYear } from '../constants'
-import { generateRandomData } from '../utils'
+import { getRandomInt } from '../utils'
 import './Heatmap.css'
 import type { Day } from '../types'
 
@@ -12,22 +12,31 @@ export interface IProps {
 	 * {
 	 *     date: '2020-01-01',
 	 *     count: 2
-	 *     level: 'low'
 	 * }
 	 */
 	data: Data
-	children?: React.ReactNode
-	loading?: boolean
-	transformData?: (data: Data) => Data
 }
 
-// async function getData(url) {}
+const TransformCount = (count: number) => {
+	if (count == 0) {
+		return 0
+	} else if (count <= 10 && count !== 0) {
+		return 1
+	} else if (count >= 10 && count < 15) {
+		return 2
+	} else if (count >= 15 && count < 20) {
+		return 3
+	} else {
+		return 4
+	}
+}
 
 const Squares = (props: { count: number }, i: React.Key) => {
 	const { count } = props
+	let level = TransformCount(count)
 	return (
 		<li
-			data-level={count}
+			data-level={level}
 			key={i}
 			data-tooltip={count + ' contributions on this day'}
 		></li>
@@ -50,7 +59,7 @@ const Heatmap = () => {
 				</ul>
 				<ul className="squares">
 					{[...Array(daysInYear)].map((i, data) => (
-						<Squares key={i} count={generateRandomData()} />
+						<Squares key={i} count={getRandomInt(0, 21)} />
 					))}
 				</ul>
 			</div>
