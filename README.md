@@ -4,7 +4,7 @@
 
 > a react contribution heatmap calendar component.
 
-do feel free to mark the repo by starring it—but I must warn you **it is still in early stages of development** and **you should not try it yet for your project, yet**. below lies some useful links to, hopefully, get you to know this component better:
+do feel free to mark the repo by starring it—but I must warn you **it is still in early stages of development**. below lies some useful links to, hopefully, get you to know this component better:
 
 -   [simple react example](http://contribution-heatmap-example.vercel.app/) | [source code](https://github.com/KnowsCount/contribution-heatmap-example)
 -   [storybook preview](https://contribution-heatmap.vercel.app/)
@@ -32,7 +32,11 @@ import the library in your project like below, and you can get started using it 
 // simply import the library, no css-imports needed
 import { Heatmap } from "contribution-heatmap"
 // and then ... just use it like you would any components
-export const YourComponent = () => <Heatmap />
+export const YourComponent = () => <Heatmap 
+    colour={[]} 
+    squaresNumber={} 
+    count={[]} 
+/>
 ```
 
 <!--prettier-ignore-end -->

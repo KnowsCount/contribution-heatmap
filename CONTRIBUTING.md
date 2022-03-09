@@ -66,3 +66,11 @@ i hereby enclose the definitions of the types:
 -   refactor: refactoring production code, eg. renaming a variable
 -   test: adding missing tests, refactoring tests; no production code change
 -   chore: updating grunt tasks etc; no production code change
+
+---
+
+## documentation or comments
+
+when writing docs or comments in code, please use as much lowercase letters as possible; that is, you should use lowercase letters for everything except when using the word `I`. do not do this when coding though.
+
+why? we should not type in capitalised letters because we hate capitalism.
