@@ -4,7 +4,7 @@ import { Heatmap } from 'contribution-heatmap'
 function App() {
 	return (
 		<div>
-			<Heatmap />
+			<Heatmap count={[365]} />
 		</div>
 	)
 }
