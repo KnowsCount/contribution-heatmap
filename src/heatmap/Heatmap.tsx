@@ -1,6 +1,6 @@
 import React from 'react'
 import { months, weekDays, daysInYear } from '../constants'
-import { getRandomInt } from '../utils'
+import { getRandomInt, TransformCount } from '../utils'
 import './Heatmap.css'
 import type { Day } from '../types'
 
@@ -15,20 +15,6 @@ export interface IProps {
 	 * }
 	 */
 	data: Data
-}
-
-const TransformCount = (count: number) => {
-	if (count == 0) {
-		return 0
-	} else if (count <= 10 && count !== 0) {
-		return 1
-	} else if (count >= 10 && count < 15) {
-		return 2
-	} else if (count >= 15 && count < 20) {
-		return 3
-	} else {
-		return 4
-	}
 }
 
 const Squares = (props: { count: number }, i: React.Key) => {
