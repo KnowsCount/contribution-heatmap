@@ -1,7 +1,6 @@
 import React from 'react'
 import { months, weekDays, daysInYear } from '../constants'
-import { Level } from '../types'
-import { getRandomCount, getRandomInt, TransformCount } from '../utils'
+import { getRandomCount, TransformCount } from '../utils'
 import './Heatmap.css'
 
 export interface IProps {
@@ -23,17 +22,14 @@ export interface IProps {
 	count: number[]
 }
 
-const Heatmap: React.FC<IProps> = (
-	props: {
-		colour?: string[]
-		squaresNumber?: number
-		count: number[]
-	},
-	i: number
-) => {
+const Heatmap: React.FC<IProps> = (props: {
+	colour?: string[]
+	squaresNumber?: number
+	count: number[]
+}) => {
 	let squaresNumber = props.squaresNumber || daysInYear
 	let count = getRandomCount(squaresNumber)
-	let level = count.map((x) => TransformCount(x))
+	let level: number[] = count.map((i: number) => TransformCount(i))
 	return (
 		<>
 			<div className="graph">
