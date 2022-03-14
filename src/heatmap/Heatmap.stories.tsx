@@ -9,9 +9,5 @@ export default {
 }
 
 export const LightMode = () => (
-	<Heatmap
-		colour={[]}
-		squaresNumber={daysInYear}
-		count={getRandomCount(daysInYear)}
-	/>
+	<Heatmap squaresNumber={daysInYear} count={getRandomCount(daysInYear)} />
 )
