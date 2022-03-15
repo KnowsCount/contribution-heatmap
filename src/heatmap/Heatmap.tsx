@@ -101,6 +101,7 @@ const Heatmap: React.FC<IProps> = (props: {
 	`
 	const Days = styled.ul`
 		margin-block-end: 0;
+		margin-block-start: 0;
 		grid-area: days;
 		display: grid;
 		grid-gap: ${squareGap};
