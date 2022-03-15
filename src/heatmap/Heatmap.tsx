@@ -16,7 +16,7 @@ import './Heatmap.css'
 
 export interface IProps {
 	/**
-	 * @description the colour of the squares from lightest to darkest, for each data-level from 0 to 4. remember the prop name is `colour`, not `color`. (WIP)
+	 * @description the colour of the squares from lightest to darkest, for each data-level from 0 to 4. remember the prop name is `colour`, not `color`.
 	 * @default ['#ebedf0', '#c6e48b', '#40c463', '#30a14e', '#216e39']
 	 */
 	colour?: string[]
@@ -134,6 +134,18 @@ const Heatmap: React.FC<IProps> = (props: {
 		border-radius: 3px;
 		border: 1px rgba(27, 31, 35, 0.06) solid;
 		background-color: ${colour[0]};
+		&[data-level='1'] {
+			background-color: ${colour[1]};
+		}
+		&[data-level='2'] {
+			background-color: ${colour[2]};
+		}
+		&[data-level='3'] {
+			background-color: ${colour[3]};
+		}
+		&[data-level='4'] {
+			background-color: ${colour[4]};
+		}
 	`
 	return (
 		<Wrapper>
