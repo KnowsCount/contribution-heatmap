@@ -68,6 +68,9 @@ const Heatmap: React.FC<IProps> = (props: {
 			Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
 			'Segoe UI Symbol';
 		font-size: 12px;
+		ul {
+			padding-inline-start: 0;
+		}
 	`
 	const Graph = styled.div`
 		padding: 20px;
@@ -110,7 +113,7 @@ const Heatmap: React.FC<IProps> = (props: {
 			visibility: hidden;
 		}
 	`
-	const SquaresList = styled.div`
+	const SquaresList = styled.ul`
 		margin-top: 0;
 		margin-block-start: 0;
 		grid-area: squares;
@@ -121,7 +124,7 @@ const Heatmap: React.FC<IProps> = (props: {
 		grid-auto-flow: column;
 		grid-auto-columns: ${squareSize};
 	`
-	const SquareListItem = styled.div`
+	const SquareListItem = styled.li`
 		border-radius: 3px;
 		border: 1px rgba(27, 31, 35, 0.06) solid;
 		background-color: ${colour[0]};
@@ -142,7 +145,7 @@ const Heatmap: React.FC<IProps> = (props: {
 				<SquaresList>
 					{[...Array(squaresNumber)].map((key: React.Key, i) => (
 						<SquareListItem
-							// colour={level[i]}
+							className="squares"
 							data-level={level[i]}
 							key={key}
 							data-tooltip={

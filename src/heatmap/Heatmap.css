@@ -1,4 +1,4 @@
-/* inspired by https://bitsofco.de/github-contribution-graph-css-grid/ */
+/* heatmap css inspired by https://bitsofco.de/github-contribution-graph-css-grid/ */
 
 * {
 	list-style: none;
@@ -6,9 +6,6 @@
 }
 
 :root {
-	--square-size: 15px;
-	--square-gap: 4px;
-	--week-width: calc(var(--square-size) + var(--square-gap));
 	--lightest: #ebedf0;
 	--light: #c6e48b;
 	--medium: #40c463;
@@ -16,25 +13,21 @@
 	--darkest: #216e39;
 }
 
-ul {
-	padding-inline-start: 0;
-}
-
 /* data levels */
 
-.squares li[data-level='1'] {
+.squares[data-level='1'] {
 	background-color: var(--light);
 }
 
-.squares li[data-level='2'] {
+.squares[data-level='2'] {
 	background-color: var(--medium);
 }
 
-.squares li[data-level='3'] {
+.squares[data-level='3'] {
 	background-color: var(--dark);
 }
 
-.squares li[data-level='4'] {
+.squares[data-level='4'] {
 	background-color: var(--darkest);
 }
 
