@@ -1,6 +1,10 @@
 import React from 'react'
 import { months, weekDays, daysInYear } from '../constants'
-import { getRandomCount, TransformCount } from '../utils'
+import {
+	getRandomCount,
+	transformCount,
+	transformPixelsToNumber,
+} from '../utils'
 import styled from 'styled-components'
 import './Heatmap.css'
 
@@ -48,12 +52,63 @@ const Heatmap: React.FC<IProps> = (props: {
 		'#30a14e',
 		'#216e39',
 	]
-	let squaresNumber = props.squaresNumber || daysInYear
-	let count = getRandomCount(squaresNumber)
-	let level: number[] = count.map((i: number) => TransformCount(i))
-	let squareGap = props.squareGap || '4px'
-	let squareSize = props.squareSize || '15px'
+	let squaresNumber: number = props.squaresNumber || daysInYear
+	let count: number[] = getRandomCount(squaresNumber)
+	let level: number[] = count.map((i: number) => transformCount(i))
+	let squareGap: string = props.squareGap || '4px'
+	let squareSize: string = props.squareSize || '15px'
+	let weekWidth: string =
+		String(
+			transformPixelsToNumber(squareGap) +
+				transformPixelsToNumber(squareSize)
+		) + 'px'
 	// styles
+	const Wrapper = styled.div`
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,
+			Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+			'Segoe UI Symbol';
+		font-size: 12px;
+	`
+	const Graph = styled.div`
+		padding: 20px;
+		border: 1px #e1e4e8 solid;
+		margin: 20px;
+		display: inline-grid;
+		grid-template-areas:
+			'empty months'
+			'days squares';
+		grid-template-columns: auto 1fr;
+		grid-gap: 10px;
+	`
+	const Months = styled.ul`
+		padding-inline-start: 0;
+		grid-area: months;
+		margin-bottom: 0;
+		display: grid;
+		grid-template-columns:
+			calc(${weekWidth} * 4) /* Jan */
+			calc(${weekWidth} * 4) /* Feb */
+			calc(${weekWidth} * 4) /* Mar */
+			calc(${weekWidth} * 5) /* Apr */
+			calc(${weekWidth} * 4) /* May */
+			calc(${weekWidth} * 4) /* Jun */
+			calc(${weekWidth} * 5) /* Jul */
+			calc(${weekWidth} * 4) /* Aug */
+			calc(${weekWidth} * 4) /* Sep */
+			calc(${weekWidth} * 5) /* Oct */
+			calc(${weekWidth} * 4) /* Nov */
+			calc(${weekWidth} * 5) /* Dec */;
+	`
+	const Days = styled.ul`
+		margin-block-end: 0;
+		grid-area: days;
+		display: grid;
+		grid-gap: ${squareGap};
+		grid-template-rows: repeat(7, ${squareSize});
+		li:nth-child(odd) {
+			visibility: hidden;
+		}
+	`
 	const SquaresList = styled.div`
 		margin-top: 0;
 		margin-block-start: 0;
@@ -71,18 +126,18 @@ const Heatmap: React.FC<IProps> = (props: {
 		background-color: ${colour[0]};
 	`
 	return (
-		<>
-			<div className="graph">
-				<ul className="months">
+		<Wrapper>
+			<Graph>
+				<Months>
 					{months.map((months, i) => (
 						<li key={i}>{months}</li>
 					))}
-				</ul>
-				<ul className="days">
+				</Months>
+				<Days>
 					{weekDays.map((weekDays, i) => (
 						<li key={i}>{weekDays}</li>
 					))}
-				</ul>
+				</Days>
 				<SquaresList>
 					{[...Array(squaresNumber)].map((key: React.Key, i) => (
 						<SquareListItem
@@ -95,8 +150,8 @@ const Heatmap: React.FC<IProps> = (props: {
 						></SquareListItem>
 					))}
 				</SquaresList>
-			</div>
-		</>
+			</Graph>
+		</Wrapper>
 	)
 }
 
