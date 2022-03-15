@@ -59,7 +59,7 @@ const Heatmap: React.FC<IProps> = (props: {
 		'#216e39',
 	]
 	let squaresNumber: number = props.squaresNumber || DAYS_IN_YEAR
-	let count: number[] = getRandomCount(squaresNumber)
+	let count: number[] = props.count || getRandomCount(squaresNumber)
 	let level: number[] = count.map((i: number) => transformCount(i))
 	let squareGap: string = props.squareGap || DEFAULT_SQUARE_GAP
 	let squareSize: string = props.squareSize || DEFAULT_SQUARE_SIZE
