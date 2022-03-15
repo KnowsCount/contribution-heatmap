@@ -1,5 +1,11 @@
 import React from 'react'
-import { months, weekDays, daysInYear } from '../constants'
+import {
+	months,
+	weekDays,
+	daysInYear,
+	defaultSquareGap,
+	defaultSquareSize,
+} from '../constants'
 import {
 	getRandomCount,
 	transformCount,
@@ -55,8 +61,8 @@ const Heatmap: React.FC<IProps> = (props: {
 	let squaresNumber: number = props.squaresNumber || daysInYear
 	let count: number[] = getRandomCount(squaresNumber)
 	let level: number[] = count.map((i: number) => transformCount(i))
-	let squareGap: string = props.squareGap || '4px'
-	let squareSize: string = props.squareSize || '15px'
+	let squareGap: string = props.squareGap || defaultSquareGap
+	let squareSize: string = props.squareSize || defaultSquareSize
 	let weekWidth: string =
 		String(
 			transformPixelsToNumber(squareGap) +
@@ -89,18 +95,18 @@ const Heatmap: React.FC<IProps> = (props: {
 		margin-bottom: 0;
 		display: grid;
 		grid-template-columns:
-			calc(${weekWidth} * 4) /* Jan */
-			calc(${weekWidth} * 4) /* Feb */
-			calc(${weekWidth} * 4) /* Mar */
-			calc(${weekWidth} * 5) /* Apr */
-			calc(${weekWidth} * 4) /* May */
-			calc(${weekWidth} * 4) /* Jun */
-			calc(${weekWidth} * 5) /* Jul */
-			calc(${weekWidth} * 4) /* Aug */
-			calc(${weekWidth} * 4) /* Sep */
-			calc(${weekWidth} * 5) /* Oct */
-			calc(${weekWidth} * 4) /* Nov */
-			calc(${weekWidth} * 5) /* Dec */;
+			calc(${weekWidth} * 4) /* jan */
+			calc(${weekWidth} * 4) /* feb */
+			calc(${weekWidth} * 4) /* mar */
+			calc(${weekWidth} * 5) /* apr */
+			calc(${weekWidth} * 4) /* may */
+			calc(${weekWidth} * 4) /* jun */
+			calc(${weekWidth} * 5) /* jul */
+			calc(${weekWidth} * 4) /* aug */
+			calc(${weekWidth} * 4) /* sep */
+			calc(${weekWidth} * 5) /* oct */
+			calc(${weekWidth} * 4) /* nov */
+			calc(${weekWidth} * 5) /* dec */;
 	`
 	const Days = styled.ul`
 		margin-block-end: 0;

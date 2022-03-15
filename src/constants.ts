@@ -24,3 +24,7 @@ export const weekDays: string[] = [
 ]
 
 export const daysInYear: number = 365
+
+export const defaultSquareGap: string = '4px'
+
+export const defaultSquareSize: string = '15px'
