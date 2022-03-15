@@ -1,4 +1,4 @@
-export const months: string[] = [
+export const MONTHS: string[] = [
 	'Jan',
 	'Feb',
 	'Mar',
@@ -13,7 +13,7 @@ export const months: string[] = [
 	'Dec',
 ]
 
-export const weekDays: string[] = [
+export const WEEK_DAYS: string[] = [
 	'Sun',
 	'Mon',
 	'Tue',
@@ -23,8 +23,8 @@ export const weekDays: string[] = [
 	'Sat',
 ]
 
-export const daysInYear: number = 365
+export const DAYS_IN_YEAR: number = 365
 
-export const defaultSquareGap: string = '4px'
+export const DEFAULT_SQUARE_GAP: string = '4px'
 
-export const defaultSquareSize: string = '15px'
+export const DEFAULT_SQUARE_SIZE: string = '15px'

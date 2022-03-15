@@ -1,10 +1,10 @@
 import React from 'react'
 import {
-	months,
-	weekDays,
-	daysInYear,
-	defaultSquareGap,
-	defaultSquareSize,
+	MONTHS,
+	WEEK_DAYS,
+	DAYS_IN_YEAR,
+	DEFAULT_SQUARE_GAP,
+	DEFAULT_SQUARE_SIZE,
 } from '../constants'
 import {
 	getRandomCount,
@@ -58,11 +58,11 @@ const Heatmap: React.FC<IProps> = (props: {
 		'#30a14e',
 		'#216e39',
 	]
-	let squaresNumber: number = props.squaresNumber || daysInYear
+	let squaresNumber: number = props.squaresNumber || DAYS_IN_YEAR
 	let count: number[] = getRandomCount(squaresNumber)
 	let level: number[] = count.map((i: number) => transformCount(i))
-	let squareGap: string = props.squareGap || defaultSquareGap
-	let squareSize: string = props.squareSize || defaultSquareSize
+	let squareGap: string = props.squareGap || DEFAULT_SQUARE_GAP
+	let squareSize: string = props.squareSize || DEFAULT_SQUARE_SIZE
 	let weekWidth: string =
 		String(
 			transformPixelsToNumber(squareGap) +
@@ -139,13 +139,13 @@ const Heatmap: React.FC<IProps> = (props: {
 		<Wrapper>
 			<Graph>
 				<Months>
-					{months.map((months, i) => (
-						<li key={i}>{months}</li>
+					{MONTHS.map((MONTHS, i) => (
+						<li key={i}>{MONTHS}</li>
 					))}
 				</Months>
 				<Days>
-					{weekDays.map((weekDays, i) => (
-						<li key={i}>{weekDays}</li>
+					{WEEK_DAYS.map((WEEK_DAYS, i) => (
+						<li key={i}>{WEEK_DAYS}</li>
 					))}
 				</Days>
 				<SquaresList>
