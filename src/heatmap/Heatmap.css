@@ -1,118 +1,11 @@
-/* inspired by https://bitsofco.de/github-contribution-graph-css-grid/ */
+/* heatmap css inspired by https://bitsofco.de/github-contribution-graph-css-grid/ */
 
 * {
 	list-style: none;
 	box-sizing: border-box;
 }
 
-:root {
-	--square-size: 15px;
-	--square-gap: 4px;
-	--week-width: calc(var(--square-size) + var(--square-gap));
-	--lightest: #ebedf0;
-	--light: #c6e48b;
-	--medium: #40c463;
-	--dark: #30a14e;
-	--darkest: #216e39;
-}
-
-ul {
-	padding-inline-start: 0;
-}
-
-.months {
-	grid-area: months;
-	margin-bottom: 0;
-}
-.days {
-	margin-block-end: 0;
-	grid-area: days;
-}
-.squares {
-	margin-top: 0;
-	margin-block-start: 0;
-	grid-area: squares;
-}
-
-.graph {
-	display: inline-grid;
-	grid-template-areas:
-		'empty months'
-		'days squares';
-	grid-template-columns: auto 1fr;
-	grid-gap: 10px;
-}
-
-.months {
-	display: grid;
-	grid-template-columns:
-		calc(var(--week-width) * 4) /* Jan */
-		calc(var(--week-width) * 4) /* Feb */
-		calc(var(--week-width) * 4) /* Mar */
-		calc(var(--week-width) * 5) /* Apr */
-		calc(var(--week-width) * 4) /* May */
-		calc(var(--week-width) * 4) /* Jun */
-		calc(var(--week-width) * 5) /* Jul */
-		calc(var(--week-width) * 4) /* Aug */
-		calc(var(--week-width) * 4) /* Sep */
-		calc(var(--week-width) * 5) /* Oct */
-		calc(var(--week-width) * 4) /* Nov */
-		calc(var(--week-width) * 5) /* Dec */;
-}
-
-.days,
-.squares {
-	display: grid;
-	grid-gap: var(--square-gap);
-	grid-template-rows: repeat(7, var(--square-size));
-}
-.squares {
-	z-index: 1;
-	grid-auto-flow: column;
-	grid-auto-columns: var(--square-size);
-}
-
-/* Other styling */
-
-body {
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
-		sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-	font-size: 12px;
-}
-
-.graph {
-	padding: 20px;
-	border: 1px #e1e4e8 solid;
-	margin: 20px;
-}
-
-.days li:nth-child(odd) {
-	visibility: hidden;
-}
-
-.squares li {
-	border-radius: 3px;
-	border: 1px rgba(27, 31, 35, 0.06) solid;
-	background-color: var(--lightest);
-}
-
-.squares li[data-level='1'] {
-	background-color: var(--light);
-}
-
-.squares li[data-level='2'] {
-	background-color: var(--medium);
-}
-
-.squares li[data-level='3'] {
-	background-color: var(--dark);
-}
-
-.squares li[data-level='4'] {
-	background-color: var(--darkest);
-}
-
-/* Styling Tooltip */
+/* tooltip */
 [data-tooltip] {
 	position: relative;
 	cursor: pointer;
@@ -134,8 +27,6 @@ body {
 	margin-left: -90px;
 	padding: 7px;
 	width: 150px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
 	border-radius: 3px;
 	background-color: #000;
 	background-color: hsla(0, 0%, 20%, 0.9);
@@ -161,7 +52,7 @@ body {
 	z-index: inherit;
 }
 
-/* Show tooltip content on hover */
+/* show tooltip content on hover */
 [data-tooltip]:hover:before,
 [data-tooltip]:hover:after {
 	visibility: visible;

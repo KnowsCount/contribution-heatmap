@@ -13,7 +13,7 @@ export const getRandomCount = (squares: number) => {
 	return randomCount
 }
 
-export const TransformCount = (count: number) => {
+export const transformCount = (count: number) => {
 	if (count == 0) {
 		return 0
 	} else if (count <= 10 && count !== 0) {
@@ -25,4 +25,9 @@ export const TransformCount = (count: number) => {
 	} else {
 		return 4
 	}
+}
+
+export const transformPixelsToNumber = (pixel: string) => {
+	let exp = /\d+/
+	return parseInt(exp.exec(pixel.toString())[0])
 }

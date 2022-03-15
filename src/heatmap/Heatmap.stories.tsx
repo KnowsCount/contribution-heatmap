@@ -1,5 +1,5 @@
 import React from 'react'
-import { daysInYear } from '../constants'
+import { DAYS_IN_YEAR } from '../constants'
 import { Heatmap } from '../index'
 import { getRandomCount } from '../utils'
 
@@ -10,8 +10,7 @@ export default {
 
 export const LightMode = () => (
 	<Heatmap
-		colour={[]}
-		squaresNumber={daysInYear}
-		count={getRandomCount(daysInYear)}
+		squaresNumber={DAYS_IN_YEAR}
+		count={getRandomCount(DAYS_IN_YEAR)}
 	/>
 )
