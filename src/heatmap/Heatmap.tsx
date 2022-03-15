@@ -12,7 +12,7 @@ import {
 	transformPixelsToNumber,
 } from '../utils'
 import styled from 'styled-components'
-import './Heatmap.css'
+import './Tooltip.css'
 
 export interface IProps {
 	/**
@@ -68,14 +68,16 @@ const Heatmap: React.FC<IProps> = (props: {
 			transformPixelsToNumber(squareGap) +
 				transformPixelsToNumber(squareSize)
 		) + 'px'
-	// styles
+	// styles (inspired by https://bitsofco.de/github-contribution-graph-css-grid/)
 	const Wrapper = styled.div`
 		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,
 			Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
 			'Segoe UI Symbol';
 		font-size: 12px;
+		box-sizing: border-box;
 		ul {
 			padding-inline-start: 0;
+			list-style: none;
 		}
 	`
 	const Graph = styled.div`

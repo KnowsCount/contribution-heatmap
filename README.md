@@ -4,7 +4,7 @@
 
 > a react contribution heatmap calendar component.
 
-do feel free to mark the repo by starring it—but I must warn you **it is still in early stages of development**. below lies some useful links to, hopefully, get you to know this component better:
+do feel free to mark the repo by starring it. below lies some useful links to, hopefully, get you to know this component better:
 
 -   [simple react example](http://contribution-heatmap-example.vercel.app/) | [source code](https://github.com/KnowsCount/contribution-heatmap-example)
 -   [storybook preview](https://contribution-heatmap.vercel.app/)
@@ -33,9 +33,11 @@ import the library in your project like below, and you can get started using it 
 import { Heatmap } from "contribution-heatmap"
 // and then ... just use it like you would any components
 export const YourComponent = () => <Heatmap 
-    colour={[]} 
-    squaresNumber={} 
-    count={[]} 
+    colour={['#ebedf0', '#c6e48b', '#40c463', '#30a14e', '#216e39']} 
+    squaresNumber={5} 
+    count={[3, 2, 20, 1, 14]}
+    squareGap='4px'
+    squareSize='15px'
 />
 ```
 
@@ -45,7 +47,7 @@ more details on props will come soon. I am making progress, albeit rather slowly
 
 ## 🙋‍♂️ contributing
 
-because of the very fact that the repository is still in early stages of development, resolving issues, implementing features or even just eliminating the simplest bugs like typos in the repository will be highly appreciated 🎉. also, feel free to share your ideas in the [discussions page](https://github.com/KnowsCount/contribution-heatmap/discussions).
+resolving issues, implementing features or even just eliminating the simplest bugs like typos in the repository will be highly appreciated 🎉. also, feel free to share your ideas in the [discussions page](https://github.com/KnowsCount/contribution-heatmap/discussions).
 
 here I list some starter scripts to run for making contributions to the repo; for the detailed version please go to [CONTRIBUTING.md](./CONTRIBUTING.md).
 
@@ -64,5 +66,7 @@ yarn storybook
 ### 📦 compiles and minifies for production
 
 ```
-yarn build
+yarn build:major
+yarn build:minor
+yarn build:patch
 ```
