@@ -18,9 +18,9 @@ export const transformCount = (count: number) => {
 		return 0
 	} else if (count <= 10 && count !== 0) {
 		return 1
-	} else if (count >= 10 && count < 15) {
+	} else if (count > 10 && count <= 15) {
 		return 2
-	} else if (count >= 15 && count < 20) {
+	} else if (count > 15 && count <= 20) {
 		return 3
 	} else {
 		return 4
