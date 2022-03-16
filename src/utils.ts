@@ -8,7 +8,7 @@ export const getRandomInt = (min: number, max: number): number => {
 export const getRandomCount = (squares: number) => {
 	let randomCount: number[] = []
 	for (let i = 0; i < squares; i++) {
-		randomCount.push(getRandomInt(0, 21))
+		randomCount.push(getRandomInt(0, 25))
 	}
 	return randomCount
 }
