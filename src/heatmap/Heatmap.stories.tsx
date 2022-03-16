@@ -8,9 +8,13 @@ export default {
 	component: Heatmap,
 }
 
-export const LightMode = () => (
+export const Default = () => (
+	<Heatmap squareNumber={DAYS_IN_YEAR} count={getRandomCount(DAYS_IN_YEAR)} />
+)
+
+export const OtherColour = () => (
 	<Heatmap
-		squaresNumber={DAYS_IN_YEAR}
+		colour={['#ebedf0', '#e2dbe9', '#bcaecc', '#5a4565', '#3e204f']}
 		count={getRandomCount(DAYS_IN_YEAR)}
 	/>
 )

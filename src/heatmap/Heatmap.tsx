@@ -25,7 +25,7 @@ export interface IProps {
 	 * @default daysInYear (365)
 	 * @example 365
 	 */
-	squaresNumber?: number
+	squareNumber?: number
 	/**
 	 * @description an array of contribution (commit) count for each square.
 	 * @example [5, 4, 3, 1, 5]
@@ -45,7 +45,7 @@ export interface IProps {
 
 const Heatmap: React.FC<IProps> = (props: {
 	colour?: string[]
-	squaresNumber?: number
+	squareNumber?: number
 	count: number[]
 	squareGap?: string
 	squareSize?: string
@@ -58,8 +58,8 @@ const Heatmap: React.FC<IProps> = (props: {
 		'#30a14e',
 		'#216e39',
 	]
-	let squaresNumber: number = props.squaresNumber || DAYS_IN_YEAR
-	let count: number[] = props.count || getRandomCount(squaresNumber)
+	let squareNumber: number = props.squareNumber || DAYS_IN_YEAR
+	let count: number[] = props.count || getRandomCount(squareNumber)
 	let level: number[] = count.map((i: number) => transformCount(i))
 	let squareGap: string = props.squareGap || DEFAULT_SQUARE_GAP
 	let squareSize: string = props.squareSize || DEFAULT_SQUARE_SIZE
@@ -163,7 +163,7 @@ const Heatmap: React.FC<IProps> = (props: {
 					))}
 				</Days>
 				<SquaresList>
-					{[...Array(squaresNumber)].map((key: React.Key, i) => (
+					{[...Array(squareNumber)].map((key: React.Key, i) => (
 						<SquareListItem
 							className="squares"
 							data-level={level[i]}
