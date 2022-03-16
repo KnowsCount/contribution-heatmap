@@ -28,10 +28,10 @@ test('transformCount() returns the correct number of squares', () => {
 	expect(transformCount(25)).toBe(4)
 })
 
-test('transformPixelsToNumber() returns the correct number of pixels', () => {
+test('transformPixelsToNumber() extracts the correct number (without unit)', () => {
 	expect(transformPixelsToNumber('0px')).toBe(0)
-	expect(transformPixelsToNumber('10px')).toBe(10)
-	expect(transformPixelsToNumber('15px')).toBe(15)
+	expect(transformPixelsToNumber('10rem')).toBe(10)
+	expect(transformPixelsToNumber('15em')).toBe(15)
 	expect(transformPixelsToNumber('-20px')).toBe(-20)
 	expect(transformPixelsToNumber('2520240394039304px')).toBe(2520240394039304)
 })
