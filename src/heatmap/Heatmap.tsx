@@ -154,6 +154,59 @@ const Heatmap: React.FC<IProps> = (props: {
 		&[data-level='4'] {
 			background-color: ${colour[4]};
 		}
+		/* tooltip */
+		&[data-tooltip] {
+			position: relative;
+			cursor: pointer;
+		}
+
+		&[data-tooltip]:before,
+		&[data-tooltip]:after {
+			visibility: hidden;
+			opacity: 0;
+			pointer-events: none;
+		}
+
+		&[data-tooltip]:before {
+			position: absolute;
+			z-index: 999;
+			bottom: 150%;
+			left: 100%;
+			margin-bottom: 5px;
+			margin-left: -90px;
+			padding: 7px;
+			width: 150px;
+			border-radius: 3px;
+			background-color: #000;
+			background-color: hsla(0, 0%, 20%, 0.9);
+			color: #fff;
+			content: attr(data-tooltip);
+			text-align: center;
+			font-size: 10px;
+			line-height: 1.2;
+		}
+
+		&[data-tooltip]:after {
+			position: absolute;
+			bottom: 150%;
+			left: 50%;
+			margin-left: -5px;
+			width: 0;
+			border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+			border-right: 5px solid transparent;
+			border-left: 5px solid transparent;
+			content: ' ';
+			font-size: 0;
+			line-height: 0;
+			z-index: inherit;
+		}
+
+		/* show tooltip content on hover */
+		&[data-tooltip]:hover:before,
+		&[data-tooltip]:hover:after {
+			visibility: visible;
+			opacity: 1;
+		}
 	`
 	return (
 		<Wrapper>
