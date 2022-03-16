@@ -41,6 +41,11 @@ export interface IProps {
 	 * @default 15px
 	 */
 	squareSize?: string
+	/**
+	 * @description the content to display in the tooltip.
+	 * @default '${count[i]} contributions on this day'
+	 */
+	tooltipContent?: string
 }
 
 const Heatmap: React.FC<IProps> = (props: {
@@ -49,6 +54,7 @@ const Heatmap: React.FC<IProps> = (props: {
 	count: number[]
 	squareGap?: string
 	squareSize?: string
+	tooltipContent?: string
 }) => {
 	// variables
 	let colour = props.colour || [
@@ -169,7 +175,8 @@ const Heatmap: React.FC<IProps> = (props: {
 							data-level={level[i]}
 							key={key}
 							data-tooltip={
-								count[i] + ' contributions on this day'
+								props.tooltipContent ||
+								`${count[i]} contributions on this day`
 							}
 						></SquareListItem>
 					))}
