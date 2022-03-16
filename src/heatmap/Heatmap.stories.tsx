@@ -6,11 +6,30 @@ import { getRandomCount } from '../utils'
 export default {
 	title: 'Example/Heatmap',
 	component: Heatmap,
+	parameters: {
+		controls: {
+			sort: 'requiredFirst',
+		},
+		layout: 'centered',
+	},
+	argTypes: {
+		squareNumber: {
+			control: { type: 'range', min: 0, max: 365, step: 1 },
+		},
+	},
 }
 
-export const Default = () => (
-	<Heatmap squareNumber={DAYS_IN_YEAR} count={getRandomCount(DAYS_IN_YEAR)} />
-)
+const Template = (args) => {
+	return <Heatmap {...args} />
+}
+
+export const Default = Template.bind({})
+Default.args = {
+	args: {
+		squareNumber: DAYS_IN_YEAR,
+		count: getRandomCount(DAYS_IN_YEAR),
+	},
+}
 
 export const OtherColour = () => (
 	<Heatmap
