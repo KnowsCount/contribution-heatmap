@@ -28,6 +28,6 @@ export const transformCount = (count: number) => {
 }
 
 export const transformPixelsToNumber = (pixel: string) => {
-	let exp = /\d+/
+	let exp = /-?\d+/g
 	return parseInt(exp.exec(pixel.toString())[0])
 }
