@@ -12,7 +12,6 @@ import {
 	transformPixelsToNumber,
 } from '../utils'
 import styled from 'styled-components'
-import './Tooltip.css'
 
 export interface IProps {
 	/**
