@@ -4,9 +4,9 @@
 
 as said in [README.md](https://github.com/KnowsCount/contribution-heatmap/blob/main/README.md#%EF%B8%8F-contributing), resolving issues or eliminating bugs in the repository will be highly appreciated 🎉. also, feel free to share your ideas in the [discussions page](https://github.com/KnowsCount/contribution-heatmap/discussions).
 
-below will be rules one has to follow when contributing to the repository:
+below will be rules one has to bear in mind should he contribute to the repository:
 
-## Useful Commands
+## useful commands
 
 ```bash
 # install deps
@@ -23,7 +23,7 @@ yarn build:major
 # if anything goes wrong you can still run
 yarn build
 
-# testing
+# testing (jest)
 yarn test
 
 # lint code (prettier)
@@ -37,8 +37,6 @@ an important thing to note is the code status behind patch, minor and major vers
 -   major: changes that break backward compatibility
 
 you can read more about semantic versioning [here](https://docs.npmjs.com/about-semantic-versioning).
-
-currently I am not following semantic versioning, but this will not be the case after release `v1.0.0`.
 
 ## commit style
 
