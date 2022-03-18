@@ -41,6 +41,11 @@ export interface IProps {
 	 */
 	squareSize?: string
 	/**
+	 * @description size of font on graph (not including tooltip font size).
+	 * @default 12px
+	 */
+	fontSize?: string
+	/**
 	 * @description the content to display in the tooltip.
 	 * @default '${count[i]} contributions on this day'
 	 */
@@ -53,6 +58,7 @@ const Heatmap: React.FC<IProps> = (props: {
 	count: number[]
 	squareGap?: string
 	squareSize?: string
+	fontSize?: string
 	tooltipContent?: string
 }) => {
 	// variables
@@ -68,6 +74,7 @@ const Heatmap: React.FC<IProps> = (props: {
 	let level: number[] = count.map((i: number) => transformCount(i))
 	let squareGap: string = props.squareGap || DEFAULT_SQUARE_GAP
 	let squareSize: string = props.squareSize || DEFAULT_SQUARE_SIZE
+	let fontSize: string = props.fontSize || '12px'
 	let weekWidth: string =
 		String(
 			transformPixelsToNumber(squareGap) +
@@ -78,7 +85,7 @@ const Heatmap: React.FC<IProps> = (props: {
 		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,
 			Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
 			'Segoe UI Symbol';
-		font-size: 12px;
+		font-size: ${fontSize};
 		box-sizing: border-box;
 		ul {
 			padding-inline-start: 0;
