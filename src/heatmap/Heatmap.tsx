@@ -52,15 +52,7 @@ export interface IProps {
 	tooltipContent?: string
 }
 
-const Heatmap: React.FC<IProps> = (props: {
-	colour?: string[]
-	squareNumber?: number
-	count: number[]
-	squareGap?: string
-	squareSize?: string
-	fontSize?: string
-	tooltipContent?: string
-}) => {
+const Heatmap: React.FC<IProps> = (props: IProps) => {
 	// variables
 	let colour = props.colour || [
 		'#ebedf0',
