@@ -10,7 +10,9 @@ import {
 	getRandomCount,
 	transformCount,
 	transformPixelsToNumber,
+	paletteGen,
 } from '../utils'
+// import hexBlend from 'hex-blender'
 import styled from 'styled-components'
 
 export interface IProps {
@@ -50,17 +52,28 @@ export interface IProps {
 	 * @default '${count[i]} contributions on this day'
 	 */
 	tooltipContent?: string
+	/**
+	 * @description the starting colour for random colour generation
+	 */
+	startColour?: string
+	/**
+	 * @description the ending colour for ranodm colour generation
+	 */
+	endColour?: string
 }
 
 const Heatmap: React.FC<IProps> = (props: IProps) => {
+	// random colours
 	// variables
-	let colour = props.colour || [
-		'#ebedf0',
-		'#c6e48b',
-		'#40c463',
-		'#30a14e',
-		'#216e39',
-	]
+	let colour =
+		props.colour || [
+			'#ebedf0',
+			'#c6e48b',
+			'#40c463',
+			'#30a14e',
+			'#216e39',
+		] ||
+		paletteGen(props.startColour, props.endColour)
 	let squareNumber: number = props.squareNumber || DAYS_IN_YEAR
 	let count: number[] = props.count || getRandomCount(squareNumber)
 	let level: number[] = count.map((i: number) => transformCount(i))
