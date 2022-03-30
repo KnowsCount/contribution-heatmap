@@ -32,20 +32,21 @@ Default.args = {
 	},
 }
 
-export const PurpleTheme = Template.bind({})
-PurpleTheme.args = {
-	args: {
-		squareNumber: DAYS_IN_YEAR,
-		count: getRandomCount(DAYS_IN_YEAR),
-		colours: ['#ebedf0', '#e2dbe9', '#bcaecc', '#5a4565', '#3e204f'],
-	},
-}
-
 export const RandomColour = () => {
 	console.log(randomColours.length)
 	return (
 		<Heatmap
 			colour={randomColours[getRandomInt(0, 99)]}
+			count={getRandomCount(DAYS_IN_YEAR)}
+		/>
+	)
+}
+
+export const ColourGen = () => {
+	return (
+		<Heatmap
+			startColour="ff0000"
+			endColour="00ff00"
 			count={getRandomCount(DAYS_IN_YEAR)}
 		/>
 	)

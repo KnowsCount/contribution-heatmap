@@ -1,6 +1,6 @@
 {
 	"name": "contribution-heatmap",
-	"version": "1.4.1",
+	"version": "1.4.2",
 	"description": "a github-inspired react contribution heatmap component",
 	"scripts": {
 		"test": "jest",
@@ -68,6 +68,7 @@
 		"typescript": "^4.5.5"
 	},
 	"dependencies": {
+		"hex-blender": "^0.0.3",
 		"nice-color-palettes": "^3.0.0",
 		"styled-components": "^5.3.3"
 	}

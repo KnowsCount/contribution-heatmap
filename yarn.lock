@@ -6321,6 +6321,11 @@ he@^1.2.0:
   resolved "https://registry.npmmirror.com/he/-/he-1.2.0.tgz"
   integrity sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
 
+hex-blender@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.npmjs.org/hex-blender/-/hex-blender-0.0.3.tgz#37b526434887983bb7d7bbf897dd1e139d4bfdcf"
+  integrity sha512-7/6Dr33e3o9UPt7WSH247RAcDsX3BFvk6QP5CF+F0+1Hne4v2fVpecfK3yLa587iYCAb5jI7Eumesk3aJCcgrg==
+
 highlight.js@^10.1.1, highlight.js@~10.7.0:
   version "10.7.3"
   resolved "https://registry.npmmirror.com/highlight.js/-/highlight.js-10.7.3.tgz"
